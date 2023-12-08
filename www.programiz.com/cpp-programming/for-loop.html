@@ -1,0 +1,490 @@
+<!Doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>C++ for Loop (With Examples)</title>
+  <link rel="shortcut icon" href=" />
+  <link type="text/css" rel="stylesheet" href="../sites/tutorial2program/files/advagg_css/css__AQpsgq4Q4-xT9cNSaLAVxPp7EusMsCVTzNUFE7XyKHg__83HEVwXzjX2QUpcqokL5vxwVGGDBI8vb7bHdw81Dd4k__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/tutorial2program/files/advagg_css/css__DqoqWo9ss46Auy7AHkZpWa4FfBVCgxSqj_wl8DzuNks__c6PYRQxTE_20equ410HYH5I8DAr0u3gzZQ7qnKaw7IU__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.css" media="all" />
+
+  <!--[if IE]><![endif]-->
+<link rel="dns-prefetch" href="https://www.google.com/" />
+<link rel="preconnect" href="https://www.google.com/" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="In this tutorial, we will learn about the C++ for loop and its working with the help of some examples. Loops are used to repeat a block of code for a certain number of times." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="for-loop.html" />
+<link rel="shortlink" href="https://www.programiz.com/node/277" />
+<script>
+  var url = window.location.href;
+  window.googletag = window.googletag || {cmd: []};
+  window.googletag.cmd.push(function() {
+      switch (true) {
+          case url.includes("/python-programming/numpy"):
+              window.googletag.pubads().setTargeting('prog_lang', 'numpy');
+              break;
+          case url.includes("/sql"):
+              window.googletag.pubads().setTargeting('prog_lang', 'sql');
+              break;
+          case url.includes("/c-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'c_programming');
+              break;
+          case url.includes("/cpp-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'c_plus_plus');
+              break;
+          case url.includes("/csharp-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'c_sharp_lang');
+              break;
+          case url.includes("/dsa"):
+              window.googletag.pubads().setTargeting('prog_lang', 'dsa');
+              break;
+          case url.includes("/java-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'java');
+              break;
+          case url.includes("/javascript"):
+              window.googletag.pubads().setTargeting('prog_lang', 'javascript');
+              break;
+          case url.includes("/kotlin-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'kotlin');
+              break;
+          case url.includes("/python-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'python');
+              break;
+          case url.includes("/swift-programming"):
+              window.googletag.pubads().setTargeting('prog_lang', 'swift');
+              break;
+      }
+  });
+</script>
+
+<script src="../../cmp.uniconsent.com/v2/stub.min.js"></script>
+<script async src='../../cmp.uniconsent.com/v2/a8d3ae4937/cmp.js'></script>
+<script type="text/javascript">
+    window.googletag = window.googletag || {};
+    window.googletag.cmd = window.googletag.cmd || [];
+    window.googletag.cmd.push(function () {
+        window.googletag.pubads().enableAsyncRendering();
+        window.googletag.pubads().disableInitialLoad();
+    });
+    (adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 1;
+</script>
+<script>
+    __tcfapi("addEventListener", 2, function (tcData, success) {
+        if (success && tcData.unicLoad === true) {
+            if (!window._initAds) {
+                window._initAds = true;
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = '//dsh7ky7308k4b.cloudfront.net/publishers/Programizcomnew.min.js';
+                document.head.appendChild(script);
+ 
+                try {
+                    fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+                        return true;
+                    }).catch(function (e) {
+                        if (document.getElementsByClassName("content-top-ad") !=  null && document.getElementsByClassName("content-top-ad").length > 0) {
+                            document.getElementsByClassName("content-top-ad")[0].style.display = "none";
+                        }
+                        var ad_elements = document.getElementsByClassName("pub-ad");
+                        while (ad_elements.length > 0) {
+                            ad_elements[0].parentNode.removeChild(ad_elements[0]);
+                        }
+
+                        if (document.getElementById("carbon-block") != null) {
+                            var carbonScript = document.createElement("script");
+                            carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CKYDL27L&placement=wwwprogramizcom";
+                            carbonScript.id = "_carbonads_js";
+                            document.getElementById("carbon-block").appendChild(carbonScript);
+                        }
+                    });
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+    });
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKXT7MH');</script>
+<style>.pub-ad{z-index:0;clear:both;position:relative;text-align:center}.pub-ad::before{content:'ADVERTISEMENTS';display:block;position:absolute;top:-20px;left:0;right:0;height:20px;font-size:9px;line-height:20px;letter-spacing:1px;color:#bcbfc5}</style>
+<!-- Facebook Pixel Code -->
+<script async>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '123000288571689');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=123000288571689&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<style>.adSpinner {display: none;}</style>
+  
+<!--[if lte IE 9]>
+<script type="text/javascript" src="/sites/tutorial2program/files/advagg_js/js__Pim5tTowQ71vrRNvaAg0m07jpCpXM6RsaXi_DARl1Go__GFcMVwA_8zYqqv3dYigkNwJmJBQm6DAlc8htDu-dGw4__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="/sites/tutorial2program/files/advagg_js/js__Pim5tTowQ71vrRNvaAg0m07jpCpXM6RsaXi_DARl1Go__GFcMVwA_8zYqqv3dYigkNwJmJBQm6DAlc8htDu-dGw4__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="../sites/tutorial2program/files/advagg_js/js__Pim5tTowQ71vrRNvaAg0m07jpCpXM6RsaXi_DARl1Go__GFcMVwA_8zYqqv3dYigkNwJmJBQm6DAlc8htDu-dGw4__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="/sites/tutorial2program/files/advagg_js/js__ZyeOaiFuDejQQbhUV7yg7atYZnj4WLfH77o0scv4068__jeShjS1-sEwOx4dbB-NSBsCnxWfNslS1Nkgx4CZngGA__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js" defer="defer" onload="
+function advagg_mod_2() {
+  // Count how many times this function is called.
+  advagg_mod_2.count = ++advagg_mod_2.count || 1;
+  try {
+    if (advagg_mod_2.count <= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_2.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_2.count >= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_2, 1);
+    }
+  }
+}
+function advagg_mod_2_check() {
+  if (window.init_drupal_core_settings && window.jQuery && window.Drupal) {
+    advagg_mod_2();
+  }
+  else {
+    window.setTimeout(advagg_mod_2_check, 1);
+  }
+}
+advagg_mod_2_check();"></script>
+<script type="text/javascript" src="../sites/tutorial2program/files/advagg_js/js__UW4URQsON5h-xjwepC-HoW32RCC10thhh4f0DQ1P8z4__V2RYL4VZntPWB_PMJnR7_8tZaKLRfCHmVvwTgS8C0iM__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js" defer="defer"></script>
+<script type="text/javascript" async="async" src="../../www.google.com/recaptcha/api.js@hl=en"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"programiz","theme_token":"YNK7AiBk1qqQ_mGe1d4wRiHaQGY8LHDgROjS6qzE0vg","jquery_version":"1.7","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/programiz_rate_share\/rate_share.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"public:\/\/honeypot\/honeypot.css":1,"sites\/all\/modules\/webform\/css\/webform.css":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.css":1,"sites\/all\/themes\/programiz\/lib\/mautic\/mautic.css":1,"sites\/all\/themes\/programiz\/dist\/main.css":1},"js":{"sites\/all\/modules\/programiz_rate_share\/programiz_rate_share.js":1,"sites\/all\/modules\/captcha\/captcha.js":1,"misc\/textarea.js":1,"misc\/progress.js":1,"sites\/all\/modules\/webform\/js\/webform.js":1,"sites\/all\/themes\/programiz\/dist\/main.min.js":1,"sites\/all\/themes\/programiz\/lib\/highlightjs\/highlight.min.js":1,"sites\/all\/themes\/programiz\/lib\/mautic\/mautic.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"https:\/\/www.google.com\/recaptcha\/api.js?hl=en":1}},"eventsData":[],"proUrlData":{"url":"https:\/\/programiz.pro\/learn\/master-cpp?utm_source=sticky-banner\u0026amp;utm_campaign=programiz\u0026amp;utm_medium=referral","language":"C++"},"better_exposed_filters":{"views":{"related_topics_sidebar_second_before_sticky_ad_":{"displays":{"block_4":{"filters":[]}}},"tutorials_related_articles":{"displays":{"block_2":{"filters":[]}}}}},"ajax":{"edit-submit":{"callback":"page_feedback_webform_ajax_validate","wrapper":"webform-client-form-1680","progress":{"type":"throbber"},"event":"mousedown","keypress":true,"prevent":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit Feedback"}}},"urlIsAjaxTrusted":{"\/system\/ajax":true,"\/cpp-programming\/for-loop":true}}); 
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+    
+</head>
+
+<body>
+   
+
+<main class="soft-bg has-notice-bar-top">
+
+
+  <div class="contents">
+    <div class="container">
+
+              <div class="toc-trigger"><button class="btn align-items-center btn--toc">
+      <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.3335 4H14.0002" stroke="#25265E" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M5.3335 8H14.0002" stroke="#25265E" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M5.3335 12H14.0002" stroke="#25265E" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M2.6665 4H1.99984" stroke="#25265E" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M2.6665 8H1.99984" stroke="#25265E" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M2.6665 12H1.99984" stroke="#25265E" stroke-opacity="0.8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+</button>
+</div>      
+    <div class="row">
+                    
+    <style>
+    .ad1 {display:none; }
+    @media(min-width: 992px) { .ad1 {display: block; width: 300px; height: 100px; margin: 32px 0; text-align: center; } }
+    </style>
+    <div class="ad1">
+    <div id="div-gpt-ad-Programizcom36792"></div>
+
+    <!-- <div id="div-gpt-ad-Programizcom39462" style="margin: 0px auto; text-align: center;"></div>  -->
+    </div>
+    
+    
+    
+    
+    <style>
+    .ad2 {display:none; }
+    @media(min-width: 992px) { .ad2 {display: block; max-width: 300px; height: 100px; margin: 32px auto; text-align: center;} }
+    </style>
+    
+    <div class="ad2">
+    <div id="div-gpt-ad-Programizcom36787">
+    </div>
+    </div>
+    <div id="div-gpt-ad-Programizcom40396">
+    </div>
+    </div>
+          
+         
+                            
+    
+    
+    
+    <style>#carbonads{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Helvetica,Arial,sans-serif;--width:728px;--font-size:22px}#carbonads{display:block;overflow:hidden;max-width:var(--width);position:relative;background-color:#fcfcfc;border:solid 1px #eee;font-size:var(--font-size);box-sizing:border-box;margin:0}.detail #carbonads{margin-top:12px}#carbonads a{color:inherit;text-decoration:none}#carbonads a:hover{color:inherit}.carbon-wrap{display:flex;align-items:center}carbon-img{display:block;float:left;margin:0;max-width:var(--width);line-height:1}.carbon-img img{display:block;margin:0;width:auto}.carbon-text{display:block;float:left;padding:0 1em;line-height:1.35;max-width:calc(100% - 130px - 2em);text-align:left}.carbon-poweredby{display:block;position:absolute;bottom:0;right:0;padding:6px 10px;background:repeating-linear-gradient(-45deg,transparent,transparent 5px,hsla(0,0%,0%,.025) 5px,hsla(0,0%,0%,.025) 10px) hsla(203,11%,95%,.8);text-align:center;text-transform:uppercase;letter-spacing:.5px;font-weight:600;font-size:8px;border-top-left-radius:4px;line-height:1}@media only screen and (min-width:320px) and (max-width:759px){.carbon-text{font-size:14px}}</style>
+
+<div id="carbon-block"></div>
+    
+    <style>
+    #div-gpt-ad-Programizcom36791 {display: none; }
+    #div-gpt-ad-Programizcom39106 {display: block;}
+    /* .pgAdWrapper { display: block !important; } */
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36791 {display: block;} #div-gpt-ad-Programizcom39106 {display: none;}}
+    </style>    
+            <div class="editor-contents">
+                              <h1>C++ Number guessing game tutorial</h1>
+              
+              
+                            <!--  <p class="editor-contents__short-description"></p> -->
+              
+              
+    <div id="node-277" class="node node-cpp-tutorial node-promoted clearfix" about="/cpp-programming/for-loop" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="C++ for Loop" class="rdf-meta element-hidden"></span>
+  
+  <div class="content">
+      <p id="introduction">This page is intended to show you how to create a number guessing game in C++. This will be done by braking down the code into more digesitable chunks. </p>
+
+<hr>
+<h2 id="for-loop">C++ Getting started</h2>
+
+<p>This is what the basic start of code should generally look like. It has the basics of what the computer will need to compile.All this code is doing is returning a zero, which is essentially nothing but it is meant to introduce the idea of sending messages to the compiler </p>
+
+<pre>
+<code>#include &lt;iostream&gt; //this allows for inputs and outputs to the console.
+using namespace std; //this allows for basic syntax such as cout and cin
+
+//make sure to use these, they are important
+
+int main() //this is where the code will be written in
+{
+    return 0; //It's good practice to always use a return to tell the console when to stop.
+}
+</code></pre>
+
+
+
+
+<hr>
+<h3 id="example1">Rand: Creating importent variables</h3>
+
+<pre class="cpp-exec">
+<code>#include &lt;iostream&gt; 
+#include &lt;time.h&gt; //enables random numbers
+using namespace std;  
+
+
+int main() 
+{
+      srand(time(0)); 
+//this allows the random number 
+//to be diferent when the game is played
+
+int RN = 1 + (rand() % 100); 
+//this will be the random 
+//number itself, if you want to change the range 
+//this can be done by changing the '100.'
+
+int choice; //this is for the user's input
+  
+
+    return 0; 
+}</code></pre>
+
+
+
+<hr>
+<h3 id="example2">Loop: Creating the main game code </h3>
+
+<pre class="cpp-exec">
+<code>#include &lt;iostream&gt; 
+#include &lt;time.h&gt; 
+using namespace std;  
+
+int main() 
+{
+srand(time(0)); 
+int RN = 1 + (rand() % 100); 
+int choice; 
+
+//this do loop will go until the player puts the 
+//correct number
+//it will repeat until the player does so
+do 
+{
+    cout << "Enter a number: ";
+    cin >> choice;
+    
+    if (choice < RN)
+    
+        cout << "Your estimate is less, than the number ;(" << endl;
+        
+    else if (choice > RN)
+    
+        cout << "Your estimate is more, than the secret number :(" << endl;
+        
+    else
+         cout << "Your guess is right!" << endl;
+         
+} while (choice != RN);
+
+system("PAUSE");
+//this pauses the program for flow
+
+ return 0; 
+}
+</code></pre>
+
+
+      
+<hr>
+<h3 id="infinite-loop">C++ Try it yourself</h3>
+
+<p>Use a free compling site below to try it out. Pay attention to the upper bar, this is where the information to run this compiler will be.</p>
+
+<ul>
+	<li><a href="https://www.onlinegdb.com/online_c++_compiler">C++ OnlineGDB Compiler</a></li>
+	
+</ul>
+
+<hr>
+ 
+  </div>
+
+  
+  
+</div>
+
+                  
+                              <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+      <button class="btn btn--clear align-items-center">
+      <svg class="programiz-icon">
+        <use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use>
+      </svg>
+      </button></h3><div class="tutorial-toc__links"><ul>
+	<li><a href="for-loop.html#introduction">Introduction</a></li>
+	<li><a href="for-loop.html#for-loop">C++ for loop</a></li>
+	<li><a href="for-loop.html#example1">Printing Numbers From 1 to 5</a></li>
+	<li><a href="for-loop.html#example2">Display a text 5 times</a></li>
+	<li><a href="for-loop.html#example3">Find the sum of first n Natural Numbers</a></li>
+	<li><a href="for-loop.html#ranged">Ranged Based for Loop</a></li>
+	<li><a href="for-loop.html#infinite-loop">C++ Infinite for loop</a></li>
+</ul>
+</div></div></div>                          </div>
+
+                          <div class="block">
+                  
+    
+    
+    
+    
+
+
+    
+    <style>
+    #div-gpt-ad-Programizcom36790 {display:none; }
+    #div-gpt-ad-Programizcom36794 {display: block; }
+    @media(min-width: 992px) { #div-gpt-ad-Programizcom36790 {display: block;} #div-gpt-ad-Programizcom36794 {display: none; }}
+    </style>
+    
+    <div id="div-gpt-ad-Programizcom36790" style=" margin: 48px 0 36px; height: 90px; width: 728px;">
+    </div>
+    
+    <div id="div-gpt-ad-Programizcom36794" style="margin: 48px 0 36px; min-height: 250px;">
+    </div>
+                  </div>
+            
+          </div>
+        </div>
+      </div>
+      <hr>
+
+                
+    
+    
+    
+    <div class="view view-tutorials-related-articles view-id-tutorials_related_articles view-display-id-block_2 above-bottom-recommended-articles view-dom-id-1a7d5f42a5f1d93194d098322f49ba47">
+        
+  
+  
+      
+  
+  
+  
+  
+  
+  
+</div>
+          
+      <!-- Get app link -->
+                    
+    </div>
+  
+
+       
+  </main>
+
+  <script type="text/javascript" src="../sites/tutorial2program/files/advagg_js/js__jJmToAldTfAJks5CixSOt-owcEpEHnWNxIBmpy34IPc__BmFWmsE78okTY23a2cuDzLrslnolLbSxNPvq4TpgU9s__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js" defer="defer"></script>
+<script type="text/javascript" src="../sites/tutorial2program/files/advagg_js/js__XzK8l9erCJk3b4QnNKFAvBpRphewCKi2OvW4P-TISXk__v0Kl7QAme39QtqHGc3kt-XDLDapV6lsiHLblT_N-1-Y__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js" defer="defer"></script>
+<script type="text/javascript" src="../sites/tutorial2program/files/advagg_js/js__--0Z8Ko2Ouantt4UUbDD1guuMHUWwLlSlrZ6GNz8h-g__VaATMLIXBlT6WQeCIhalJNaHvEzq2zP8Qfzdh6PzXQ0__bCS_vRPSPhWjQrSwUudaIT6Apl9ThEOgdjF4W3y9VhA.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+function advagg_mod_3() {
+  // Count how many times this function is called.
+  advagg_mod_3.count = ++advagg_mod_3.count || 1;
+  try {
+    if (advagg_mod_3.count <= 40) {
+      var base_path = '/'; var module_path = 'sites/all/modules/programiz_rate_share';
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_3.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_3.count >= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 250 ms.
+      window.setTimeout(advagg_mod_3, 250);
+    }
+  }
+}
+function advagg_mod_3_check() {
+  if (window.jQuery && window.Drupal && window.Drupal.settings) {
+    advagg_mod_3();
+  }
+  else {
+    window.setTimeout(advagg_mod_3_check, 250);
+  }
+}
+advagg_mod_3_check();
+//--><!]]>
+</script>
+</body>
+
+</html>
